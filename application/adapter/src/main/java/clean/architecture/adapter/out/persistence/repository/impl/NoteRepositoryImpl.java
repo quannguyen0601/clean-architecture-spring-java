@@ -26,7 +26,7 @@ public class NoteRepositoryImpl implements NoteRepository {
 
     @Override
     public Optional<Note> getNoteById(Long id) {
-        return noteMapper.noteTblToNote(jpaNoteRepository.findById(id));
+        return Optional.ofNullable(noteMapper.noteTblToNote(jpaNoteRepository.findById(id).orElse(null)));
     }
 
     @Override

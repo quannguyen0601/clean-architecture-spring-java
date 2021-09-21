@@ -1,5 +1,6 @@
 package clean.architecture.adapter.out.persistence.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Entity
 @Data
+@AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @EqualsAndHashCode(callSuper = false)
 public class UserTbl extends BaseEntity{

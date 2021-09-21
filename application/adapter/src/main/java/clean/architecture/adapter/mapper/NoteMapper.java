@@ -1,5 +1,6 @@
 package clean.architecture.adapter.mapper;
 
+import clean.architecture.adapter.in.web.entity.NoteDto;
 import clean.architecture.adapter.in.web.entity.request.CreatingNoteRequest;
 import clean.architecture.adapter.in.web.entity.response.CreatingNoteResponse;
 import clean.architecture.adapter.in.web.entity.response.GetAllNoteResponse;
@@ -13,17 +14,17 @@ import org.mapstruct.Mapping;
 import java.util.List;
 import java.util.Optional;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = UserMapper.class)
 public interface NoteMapper {
-    @Mapping(target = "user",ignore = true)
-    Optional<Note> noteTblToNote(Optional<NoteTbl> noteTbl);
 
     @Mapping(target = "user",ignore = true)
     Note noteTblToNote(NoteTbl noteTbl);
 
     List<Note> noteTblToNoteList(List<NoteTbl> noteTbls);
 
-    NoteTbl userToUserTbl(Note note);
+    NoteDto fromNoteToNoteDto(Note note);
+
+    List<NoteDto> fromNoteToNoteDto(List<Note> note);
 
     // Creating Note Request
     CreateNoteUseCase.Input fromRequestToCreateNoteInput(CreatingNoteRequest createNoteRequest);
@@ -31,6 +32,5 @@ public interface NoteMapper {
 
     //GetAllNoteUseCase
     GetAllNoteResponse fromGetAllNoteOutputToResponse(GetAllNoteUseCase.Output note);
-
 }
 

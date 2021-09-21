@@ -20,6 +20,6 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Optional<User> findUserById(Long id) {
-        return userMapper.userTblToUser(jpaUserRepository.findById(id));
+        return Optional.ofNullable(userMapper.userTblToUser(jpaUserRepository.findById(id).orElse(null)));
     }
 }

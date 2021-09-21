@@ -20,8 +20,18 @@ repositories {
 
 dependencies {
     compileOnly libs.lombok
+    annotationProcessor libs.lombok
 }
 
 test {
     useJUnitPlatform()
 }
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+

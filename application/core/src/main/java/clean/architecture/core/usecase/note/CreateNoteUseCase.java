@@ -4,6 +4,8 @@ import clean.architecture.core.domain.Note;
 import clean.architecture.core.domain.User;
 import clean.architecture.core.usecase.BaseUseCase;
 import clean.architecture.core.usecase.user.UserRepository;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Value;
 
 import java.util.Optional;
@@ -34,13 +36,13 @@ public class CreateNoteUseCase extends BaseUseCase<CreateNoteUseCase.Input, Crea
 
     @Value
     public static class Input implements InputValues {
-        private String body;
-        private boolean done;
-        private Long userId;
+        String body;
+        boolean done;
+        Long userId;
     }
 
     @Value
     public static class Output implements OutputValues {
-        private Note note;
+        Note note;
     }
 }

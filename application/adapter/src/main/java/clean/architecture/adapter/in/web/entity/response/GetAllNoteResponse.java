@@ -7,5 +7,5 @@ import java.util.List;
 
 @Data
 public class GetAllNoteResponse {
-    private List<NoteDto> note;
+    private List<NoteDto> notes;
 }

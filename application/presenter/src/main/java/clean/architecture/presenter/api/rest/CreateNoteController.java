@@ -13,8 +13,8 @@ import javax.validation.Valid;
 @RestController
 @RequiredArgsConstructor
 public class CreateNoteController {
-    private final CreateNoteResource createNoteResource;
 
+    private final CreateNoteResource createNoteResource;
 
     @PostMapping("/api/note")
     public CreatingNoteResponse createNote(

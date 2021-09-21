@@ -2,6 +2,9 @@ package clean.architecture.core.usecase.note;
 
 import clean.architecture.core.domain.Note;
 import clean.architecture.core.usecase.BaseUseCase;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import lombok.Value;
 
 import java.util.List;

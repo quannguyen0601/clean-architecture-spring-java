@@ -12,6 +12,15 @@ public class Note extends BaseEntity {
 
     private User user;
 
+    public Note(Long id, String body, boolean done, User user) {
+        this.id = id;
+        this.body = body;
+        this.done = done;
+        this.user = user;
+    }
+
+    public Note() {}
+
     public Long getId() {
         return id;
     }

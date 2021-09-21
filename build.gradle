@@ -9,6 +9,7 @@ subprojects {
 
 	ext {
 		springboot_version = "2.5.4"
+		mapstructVersion = "1.4.2.Final"
 	}
 
 	ext.libs = [
@@ -28,8 +29,12 @@ subprojects {
 			h2        : [
 					"com.h2database:h2"
 			],
+
 			mapstruct : [
-					"org.mapstruct:mapstruct-processor:1.4.2.Final"
+					"org.mapstruct:mapstruct:${mapstructVersion}"
+			],
+			mapstruct_processor : [
+					"org.mapstruct:mapstruct-processor:${mapstructVersion}"
 			],
 
 			spring_boot_configuration : [

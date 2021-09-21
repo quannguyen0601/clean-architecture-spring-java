@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.quan.clean.architure.core'
+group = 'com.quan.clean.architure.adapter'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -20,15 +20,12 @@ repositories {
 
 dependencies {
     implementation libs.database
-    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
-
     implementation libs.mapstruct
 
     implementation project (':application:core')
-    compileOnly libs.lombok
 
     annotationProcessor libs.lombok
-    annotationProcessor libs.mapstruct
+    annotationProcessor libs.mapstruct_processor
 
     testImplementation libs.test
     compileOnly libs.lombok
@@ -36,4 +33,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
 }

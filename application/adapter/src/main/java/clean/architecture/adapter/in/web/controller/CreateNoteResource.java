@@ -4,7 +4,9 @@ import clean.architecture.adapter.in.web.entity.request.CreatingNoteRequest;
 import clean.architecture.adapter.in.web.entity.response.CreatingNoteResponse;
 import clean.architecture.adapter.mapper.NoteMapper;
 import clean.architecture.core.usecase.note.CreateNoteUseCase;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CreateNoteResource implements BaseResource<CreatingNoteRequest, CreatingNoteResponse> {
 
     private final CreateNoteUseCase createNoteUseCase;
@@ -21,6 +23,4 @@ public class CreateNoteResource implements BaseResource<CreatingNoteRequest, Cre
         CreateNoteUseCase.Output output = createNoteUseCase.execute(input);
         return noteMapper.fromCreatingNoteOutputToResponse(output);
     }
-
-
 }
