@@ -1,0 +1,11 @@
+rootProject.name = 'demo.clean.architecture'
+
+include 'application:core'
+findProject(':application:core')?.name = 'core'
+include 'application:configuration'
+findProject(':application:configuration')?.name = 'configuration'
+include 'application:adapter'
+findProject(':application:adapter')?.name = 'adapter'
+include 'application:presenter'
+findProject(':application:presenter')?.name = 'presenter'
+

@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.quan.clean.architure.core'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation libs.database
+    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+
+    implementation libs.mapstruct
+
+    implementation project (':application:core')
+    compileOnly libs.lombok
+
+    annotationProcessor libs.lombok
+    annotationProcessor libs.mapstruct
+
+    testImplementation libs.test
+    compileOnly libs.lombok
+}
+
+test {
+    useJUnitPlatform()
+}
