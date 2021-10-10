@@ -8,4 +8,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = {"clean.architecture.adapter.out.persistence.entity"})
 @EnableJpaRepositories(basePackages = {"clean.architecture.adapter.out.persistence.repository.jpa"})
 public class JpaConfiguration {
+
 }

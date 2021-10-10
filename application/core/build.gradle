@@ -21,6 +21,8 @@ repositories {
 dependencies {
     compileOnly libs.lombok
     annotationProcessor libs.lombok
+
+    testImplementation libs.test
 }
 
 test {
